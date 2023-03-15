@@ -14,7 +14,6 @@ export const useGoogleSearch = (term) => {
              then(res=>{ setData(res)} );
         }
 
-        
         fetchData();
     }, [term]);
     

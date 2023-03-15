@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Avatar } from '@mui/material';
-import Search from "./Search";
+import Search from "../components/Search";
 import "./Home.css";
 
 
 export default function Home() {
+
+
   return (
     <div className="home">
 

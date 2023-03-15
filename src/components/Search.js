@@ -1,15 +1,15 @@
 import { Button } from '@mui/material';
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { ACTIONS } from '../StateProvider/reducer';
-import { StateContext } from '../StateProvider/StateProvider';
+import { useContextValue } from '../StateProvider/StateProvider';
 import "./Search.css";
 
 export default function Search() {
 
   const [input, setInput] = useState("");
   const navigate = useNavigate();
-  const [state, dispatch] = useContext(StateContext);
+  const [state, dispatch] = useContextValue();
 
   
   const Submit = (e) => {

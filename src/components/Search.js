@@ -1,13 +1,32 @@
 import { Button } from '@mui/material';
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { ACTIONS } from '../StateProvider/reducer';
+import { StateContext } from '../StateProvider/StateProvider';
 import "./Search.css";
 
 export default function Search() {
+
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+  const [state, dispatch] = useContext(StateContext);
+
+  
+  const Submit = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: ACTIONS.SET_SEARCH_TERM,
+      term: input,
+    })
+    navigate("/search")
+  }
+
+
   return (
-    <form className="search">
+    <form className="search" onSubmit={Submit}>
         <div className="search__input">
             <img className='search__searchIcon' src="images/search.svg" />
-            <input type="text" />
+            <input type="text" onChange={(e) => setInput(e.target.value)} />
             <div>
               <img className='search__micro' src="images/micro.svg" />
               <img className='search__camera' src="images/camera.svg" />

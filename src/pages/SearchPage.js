@@ -18,12 +18,13 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function SearchPage() {
   
+  
   const [{term}, dispatch] = useContextValue(); 
   
   // Live Call 
   const {data} = useGoogleSearch(term)
-
-  // const data = Response;
+  
+  document.title = term;
 
 
   return (

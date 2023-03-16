@@ -7,6 +7,7 @@ import "./Home.css";
 
 export default function Home() {
 
+  document.title = "Google Clone"
 
   return (
     <div className="home">
